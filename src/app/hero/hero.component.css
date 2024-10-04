@@ -1,0 +1,104 @@
+/* Hero Section Styling */
+/* Aumentar el brillo de la sección completa */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  filter: brightness(1.9); /* Ajusta el brillo */
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero Content */
+.hero-content {
+  z-index: 1;
+  position: relative;
+  padding: 20px;
+  max-width: 800px;
+}
+
+/* Logo Styling */
+.hero-logo {
+  max-width: 250px; /* Ajusta el tamaño del logo */
+  margin-bottom: 20px; /* Espaciado entre logo y título */
+  animation: fadeInDown 1s ease-in-out; /* Animación de entrada */
+  border-radius: 50%; /* Hace la imagen redondeada */
+  border: 5px solid#FFCC29; /* Borde grueso de color amarillo */
+}
+
+/* Headings */
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Call to Action Button */
+.cta-button {
+  background-color: #FFCC29;
+  color: #003366;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffa726;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Overlay for Text Readability */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay to improve text visibility */
+  z-index: 1;
+}
+
+/* Keyframe for fadeIn animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

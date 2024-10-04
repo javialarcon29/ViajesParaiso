@@ -1,0 +1,122 @@
+/* Estilo general de la sección */
+#featured-cities {
+  padding: 120px 30px;
+  background-color: #f4f7f9;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contenedor de las tarjetas de ciudades */
+.cities-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.city-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la tarjeta */
+.city-image {
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  transition: transform 0.4s ease;
+}
+
+.city-card:hover .city-image {
+  transform: scale(1.05);
+}
+
+/* Información de la ciudad */
+.city-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.city-info h3 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.city-info p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Estilo de los precios */
+.price {
+  font-size: 1.4rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Botón de "Reservar ahora" */
+.btn-reserve {
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #2980b9;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reserve:hover {
+  background-color: #1abc9c;
+}
+
+/* Diseño adaptable */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .city-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .city-info p {
+    font-size: 0.9rem;
+  }
+}

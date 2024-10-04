@@ -1,0 +1,24 @@
+<section id="featured-cities">
+  <div class="section-header">
+    <h2>Ciudades Destacadas</h2>
+    <p>Explora destinos increíbles y reserva tu próxima aventura en una de estas ciudades destacadas.</p>
+  </div>
+
+  <div class="cities-container">
+    <!-- Iteramos sobre las ciudades usando *ngFor -->
+    <div *ngFor="let city of cities" class="city-card">
+      <!-- Imagen de la ciudad -->
+      <div class="city-image" [ngStyle]="{'background-image': 'url(' + city.image + ')'}"></div>
+
+      <!-- Información de la ciudad -->
+      <div class="city-info">
+        <h3>{{ city.name }}</h3>
+        <p>{{ city.description }}</p>
+        <!-- Precio con símbolo de EUR al final -->
+        <p class="price">Precio desde: {{ city.price }} €</p>
+        <!-- Usamos href en lugar de routerLink -->
+        <a [href]="'/city/' + city.name" class="btn-reserve">Más información</a>
+      </div>
+    </div>
+  </div>
+</section>

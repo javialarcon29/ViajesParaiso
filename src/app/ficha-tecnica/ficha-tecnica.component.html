@@ -1,0 +1,27 @@
+<div class="ficha-tecnica-container" *ngIf="cityInfo; else noData">
+  <h2>{{ cityInfo.name }}</h2>
+  <div class="city-description">
+    <p>{{ cityInfo.description }}</p>
+  </div>
+  
+  <h3>Atracciones Principales:</h3>
+  <ul>
+    <li *ngFor="let attraction of cityInfo.attractions">{{ attraction }}</li>
+  </ul>
+
+  <p><strong>Mejor época para visitar:</strong> {{ cityInfo.bestTimeToVisit }}</p>
+
+  <!-- Botón para regresar a la lista de ciudades destacadas -->
+  <a href="/featured-cities" class="btn-back">Regresar a Ciudades Destacadas</a>
+</div>
+
+<ng-template #noData>
+  <h2>Ciudad no encontrada</h2>
+  <p>Lo sentimos, no tenemos información sobre esta ciudad. Por favor, verifica el nombre o selecciona otra ciudad.</p>
+  
+  <!-- Botón para regresar a la lista de ciudades destacadas -->
+  <a href="/featured-cities" class="btn-back">Regresar a Ciudades Destacadas</a>
+</ng-template>
+
+  
+  
