@@ -1,18 +1,32 @@
-<section id="services">
-    <h2>Nuestros Servicios</h2>
-    <div class="services-container">
-      <div class="service">
-        <h3>Transporte</h3>
-        <p>Ofrecemos transporte cómodo y seguro en todo Brasil.</p>
+  <!-- services.component.html -->
+<div class="services">
+  <h2>Nuestros Servicios</h2>
+  <div class="services-container">
+    <div class="service-card" *ngFor="let service of services" (mouseover)="toggleHover(service)" (mouseleave)="toggleHover(service)">
+      <i class="service-icon" [class]="service.icon"></i>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.description }}</p>
+      <button class="more-info-btn" (click)="showMoreInfo(service)">Mostrar más información</button>
+    </div>
+  </div>
+
+  <!-- Modal de servicio -->
+  <div class="service-modal" *ngIf="selectedService">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h3>{{ selectedService.title }}</h3>
+      <p>{{ selectedService.longDescription }}</p>
+
+      <!-- Galería de imágenes -->
+      <div class="gallery">
+        <button class="prev-btn" (click)="prevImage()">&#10094;</button>
+        <img [src]="selectedService.gallery[currentImageIndex]" alt="Imagen de {{ selectedService.title }}">
+        <button class="next-btn" (click)="nextImage()">&#10095;</button>
       </div>
-      <div class="service">
-        <h3>Alojamiento</h3>
-        <p>Encuentra los mejores hoteles y posadas adaptadas a tu presupuesto.</p>
-      </div>
-      <div class="service">
-        <h3>Guías Turísticos</h3>
-        <p>Conoce los destinos con nuestros guías turísticos expertos.</p>
+
+      <div class="image-counter">
+        Imagen {{ currentImageIndex + 1 }} de {{ selectedService.gallery.length }}
       </div>
     </div>
-  </section>
-  
+  </div>
+</div>

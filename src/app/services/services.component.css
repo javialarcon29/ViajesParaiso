@@ -1,41 +1,201 @@
-/* services.component.css */
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
+/* Estilo para la sección principal */
 .services {
-    padding: 60px 20px;
-    background-color: #f8f9fa;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+  background-color: #FFCC29; /* Fondo amarillo suave */
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 85px;
+}
+
+/* Estilo para cada tarjeta de servicio */
+.service-card {
+  background-color: rgba(53, 142, 201, 0.685);
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  border: solid 3px rgb(33, 45, 226);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los íconos */
+.service-icon {
+  font-size: 3rem;
+  color: #4e8eff;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-card p {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.more-info-btn {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.more-info-btn:hover {
+  background-color: #357ae8;
+}
+
+/* Estilo para el modal */
+.service-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color:#f4f7f9;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 700px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .services h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
   }
-  
+}
+
+.modal-content {
+  position: relative;
+  text-align: center;
+}
+
+/* Estilo ajustado para la "X" del modal */
+.close {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Estilo para la galería de imágenes */
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 600px;
+  height: 400px; /* Establece una altura fija */
+  object-fit: cover; /* Las imágenes se recortan para llenar el contenedor sin deformarse */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: #4e8eff;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: #357ae8;
+}
+
+.prev-btn {
+  left: -40px;
+}
+
+.next-btn {
+  right: -40px;
+}
+
+.image-counter {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
   .service-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%;
   }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  .gallery img {
+    max-width: 100%;
+    height: 300px; /* Altura más pequeña en pantallas móviles */
   }
-  
-  .service-icon {
-    font-size: 3rem;
-    color: #f4d35e;
+
+  .prev-btn {
+    left: 10px;
   }
-  
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+
+  .next-btn {
+    right: 10px;
   }
-  
-  .service-card p {
-    color: #666;
-  }
-  
+}
