@@ -1,27 +1,40 @@
-<div class="ficha-tecnica-container" *ngIf="cityInfo; else noData">
+<div class="container" *ngIf="cityInfo; else noData">
   <h2>{{ cityInfo.name }}</h2>
   <div class="city-description">
     <p>{{ cityInfo.description }}</p>
   </div>
-  
+
+  <!-- Precio -->
+  <p class="price"><strong>Precio:</strong> {{ cityInfo.price }} €</p>
+
+  <!-- Galería de la ciudad -->
+  <h3>Galería de la Ciudad:</h3>
+  <div class="city-gallery">
+    <img *ngFor="let image of cityInfo.images" [src]="image" alt="Imagen de {{ cityInfo.name }}">
+  </div>
+
+  <!-- Atracciones -->
   <h3>Atracciones Principales:</h3>
-  <ul>
+  <ul class="attractions-list">
     <li *ngFor="let attraction of cityInfo.attractions">{{ attraction }}</li>
   </ul>
 
+  <!-- Galería de atracciones -->
+  <h3>Imágenes de las Atracciones:</h3>
+  <div class="attraction-gallery">
+    <img *ngFor="let attractionImage of cityInfo.attractionImages" [src]="attractionImage" alt="Imagen de atracción">
+  </div>
+
   <p><strong>Mejor época para visitar:</strong> {{ cityInfo.bestTimeToVisit }}</p>
 
-  <!-- Botón para regresar a la lista de ciudades destacadas -->
-  <a href="/featured-cities" class="btn-back">Regresar a Ciudades Destacadas</a>
+  <!-- Botón para añadir al carrito -->
+  <button class="btn-add-cart">Contratar Viaje</button>
 </div>
 
 <ng-template #noData>
-  <h2>Ciudad no encontrada</h2>
-  <p>Lo sentimos, no tenemos información sobre esta ciudad. Por favor, verifica el nombre o selecciona otra ciudad.</p>
-  
-  <!-- Botón para regresar a la lista de ciudades destacadas -->
-  <a href="/featured-cities" class="btn-back">Regresar a Ciudades Destacadas</a>
+  <div class="container noData">
+    <h2>Ciudad no encontrada</h2>
+    <p>Lo sentimos, no tenemos información sobre esta ciudad. Por favor, verifica el nombre o selecciona otra ciudad.</p>
+    <a href="/featured-cities" class="btn-back">Regresar a Ciudades Destacadas</a>
+  </div>
 </ng-template>
-
-  
-  
