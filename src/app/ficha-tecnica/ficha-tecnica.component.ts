@@ -146,7 +146,6 @@ export class FichaTecnicaComponent {
         'https://images.pexels.com/photos/56789012/pexels-photo-56789012.jpeg?auto=compress&cs=tinysrgb&w=600'
       ]
     }
-  
   ];
 
   constructor(private route: ActivatedRoute) {}
@@ -155,4 +154,11 @@ export class FichaTecnicaComponent {
     this.cityName = this.route.snapshot.paramMap.get('name');
     this.cityInfo = this.citiesData.find(city => city.name.toLowerCase() === this.cityName?.toLowerCase()) || null;
   }
-}
+  redirectToPayment() {
+    // URL de prueba de la pasarela de pago para desarrolladores (usa una URL válida)
+    const paymentUrl = 'https://www.sandbox.paypal.com/checkoutnow?token=VALID_TOKEN'; // Reemplaza VALID_TOKEN por el token correcto
+  
+    // Redirige al usuario a la página de pago
+    window.location.href = paymentUrl;
+  }
+}  

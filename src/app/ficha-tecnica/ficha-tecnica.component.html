@@ -28,7 +28,9 @@
   <p><strong>Mejor época para visitar:</strong> {{ cityInfo.bestTimeToVisit }}</p>
 
   <!-- Botón para añadir al carrito -->
-  <button class="btn-add-cart">Contratar Viaje</button>
+  <button class="btn-add-cart" (click)="redirectToPayment()">Contratar Viaje</button>
+
+
 </div>
 
 <ng-template #noData>
